@@ -16,61 +16,104 @@
         }
         #wrap {
              
-            width: 10px;  
+            width: 1080px;  
             margin: 0 auto;
             background-color : white;
             box-shadow: 0 0 10 px rgba(0,0,0,0.1);
             /* 그림자효과 */
         }
+
         header {
             width: 100%;
-            height: 10px;
+            height: 325px;
             background-color : gray;
             overflow: hidden;
             position: relative;
         }
+
         header img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         header h1 {
             position: absolute;
-            bottom: 10px;
-            left: 10px;
+            bottom: 20px;
+            left: 20px;
             color: white;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
             font-size: 2em;
         }
+
         #container {
-            padding: 10px;
+            padding: 20px;
             overflow: hidden;
         }
+
         aside {
-            width : 100px;
+            width : 240px;
             float: left;
-            margin-right: 10px;
+            margin-right: 20px;
         }
+
         .profile-box {
-            border: 10px solid white;
-            padding: 10px;
+            border: 1px solid white;
+            padding: 20px;
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             border-radius: 10px;
             background: white;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%; 
+            background-color: #ccc;
+            margin: 0 auto 10px;
+            overflow: hidden;
+        }
+
+         .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+        
+        .profile-desc {
+            font-size: 0.9em;
+            color: #666;
+            line-height: 1.4;
         }
     </style>
 </head>
 
 <body>
     <div id="wrap">
-            <header>
-                <img src="" alt="블로그 메인 베너">
+            <hdeader>
+                <img src="banner.jpg" alt="블로그 메인 베너">
                 <h1>학교 앞 핫플레이스</h1>
             </header>
             <div id="container">
                 <aside>
                     <div class="profile-box">
+                        <div class="profile-img">
+                            <img src="profile.jpg", alt="프로필사진">
+                        </div>
+                    <div class="profile-name">하냥이</div>
+                    <div class="profile-desc">
+                        하냥이의 핫플 추천~!<br>
+                        하냥인들이라면 무조건 가야지<br>
+                        레츠기릿~
+                    </div>
+                    
 
                     </div>
                 </aside>
