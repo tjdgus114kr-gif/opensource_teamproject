@@ -15,7 +15,7 @@
             background-color: #f0f2f5;
         }
         #wrap {
-             
+
             width: 1080px;  
             margin: 0 auto;
             background-color : white;
@@ -26,7 +26,7 @@
         header {
             width: 100%;
             height: 325px;
-            background-color : gray;
+            background-color : #ddd;
             overflow: hidden;
             position: relative;
         }
@@ -58,12 +58,12 @@
         }
 
         .profile-box {
-            border: 1px solid white;
+            border: 1px solid #e5e5e5;
             padding: 20px;
             text-align: center;
             margin-bottom: 20px;
             border-radius: 10px;
-            background: white;
+            background: #fff;
         }
 
         .profile-img {
@@ -92,31 +92,198 @@
             color: #666;
             line-height: 1.4;
         }
+        .category-box {
+            border: 1px solid #e5e5e5 ; 
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .category-box h3 {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-bottom: 1px solid #e5e5e5;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .category-list {
+            list-style: none;
+        }
+
+        .category-list li {
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .category-list li:last-child {
+            border-bottom: none;
+        }
+
+        .category-list a {
+            display: block;
+            padding: 12px 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        .category-list a:hover {
+            background-color: #f0f2f5;
+            color: #4174ff; 
+            font-weight: bold;
+        }
+
+         
+        main {
+            width: 760px; 
+            float: left; 
+        }
+
+        .main-section-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        
+        .main-section-title span {
+            color: #ff5252; 
+        }
+
+        
+        .popular-post-card {
+            border: 1px solid #e5e5e5;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .post-thumbnail {
+            width: 100%;
+            height: 350px; 
+            background-color: #f4f4f4;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .post-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s; 
+        }
+
+        .post-thumbnail:hover img {
+            transform: scale(1.05); /* 확대 효과 */
+        }
+
+        .post-content {
+            padding: 25px;
+        }
+
+        .post-tag {
+            display: inline-block;
+            background-color: #5070ff;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            margin-bottom: 10px;
+        }
+
+        .post-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .post-summary {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .post-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
     </style>
 </head>
 
 <body>
     <div id="wrap">
-            <hdeader>
-                <img src="banner.jpg" alt="블로그 메인 베너">
-                <h1>학교 앞 핫플레이스</h1>
-            </header>
-            <div id="container">
-                <aside>
-                    <div class="profile-box">
-                        <div class="profile-img">
-                            <img src="profile.jpg", alt="프로필사진">
-                        </div>
+
+        <hdeader>
+            <img src="banner.jpg" alt="블로그 메인 베너">
+            <h1>학교 앞 핫플레이스</h1>
+        </header>
+
+        <div id="container">
+            <aside>
+                 <div class="profile-box">
+                    <div class="profile-img">
+                        <img src="profile.jpg", alt="프로필사진">
+                    </div>
                     <div class="profile-name">하냥이</div>
                     <div class="profile-desc">
                         하냥이의 핫플 추천~!<br>
                         하냥인들이라면 무조건 가야지<br>
                         레츠기릿~
                     </div>
-                    
+                </div>
 
+                <div class="category-box">
+                    <h3>Category</h3>
+                    <ul class="category-list">
+                        <li><a href="#"> 맛집 (Food)</a></li>
+                        <li><a href="#"> 술집 (Pub)</a></li>
+                        <li><a href="#"> 카페 (Cafe)</a></li>
+                    </ul>
+
+
+
+
+                </div>
+
+
+
+            </aside>
+
+            <main>
+                <div class="main-section-title">
+                    <span>인기있는 글</span>
+                </div>
+                
+                <article class="popular-post-card">
+                    <div class="post-thumbnail">
+                        
+                        <img src="popular.JPG" alt="인기글 대표 이미지">
                     </div>
-                </aside>
+                    <div class="post-content">
+                        <span class="post-tag">카페</span>
+                        <h2 class="post-title">한양대 에리카 힙한 감성 카페 '더스크 커피랩'</h2>
+                        <p class="post-summary">
+                            한양대 에리카 정문 앞, 블랙&다크 컨셉의 시크하고 힙한 인테리어가 돋보이는 감성 카페입니다<div class=""></div>
+                            이곳의 시그니처인 상큼달달 '오렌지 커피'와 두툼하고 꾸덕한 수제 쿠키는 꼭 맛봐야 할 별미예요.
+                            낮에는 차분한 분위기에서 카공하기 좋고, 저녁에는 은은한 조명 아래 데이트하기 딱 좋습니다.
+                            넓은 좌석과 감각적인 음악 선곡으로, 분위기 좋은 카페를 찾는 학생들에게 사랑받는 찐 핫플레이스입니다.
+                        </p>
+                        <a href="#" class="post-link">자세히 보기 &gt;</a>
+                    </div>
+                </article>
+
+
+            </main>
+
+
             </div>
 </body>
 </html>
