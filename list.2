@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>카페1 상세 리뷰 - 학교 앞 핫플레이스</title>
+    <style>
+        /* CSS 영역: 이전 index_cafe.html의 CSS를 그대로 복사하여 붙여넣습니다. */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Malgun Gothic', 'Dotum', sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        #wrap {
+            width: 1080px;  
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        header {
+            width: 100%;
+            height: 325px;
+            background-color: #ddd;
+            overflow: hidden;
+            position: relative;
+        }
+
+        header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        header h1 {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-size: 2em;
+        }
+
+        #container {
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        aside {
+            width: 240px;
+            float: left;
+            margin-right: 20px;
+        }
+
+        .profile-box {
+            border: 1px solid #e5e5e5;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            background: #fff;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin: 0 auto 10px;
+            overflow: hidden;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .profile-desc {
+            font-size: 0.9em;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .back-btn {
+            display: block;
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #333;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+
+        .category-box {
+            border: 1px solid #e5e5e5;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .category-box h3 {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-bottom: 1px solid #e5e5e5;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .category-list {
+            list-style: none;
+        }
+
+        .category-list li {
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .category-list li:last-child {
+            border-bottom: none;
+        }
+
+        .category-list a {
+            display: block;
+            padding: 12px 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        .category-list a:hover {
+            background-color: #f0f2f5;
+            color: #4174ff;
+            font-weight: bold;
+        }
+        
+        /* 새로운 스타일 추가: 상세 페이지용 */
+        main {
+            width: 760px;
+            float: left;
+        }
+
+        .detail-post-title {
+            font-size: 2em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .detail-post-meta {
+            color: #999;
+            font-size: 0.9em;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .detail-thumbnail {
+            width: 100%;
+            height: 450px; /* 큰 이미지 영역 */
+            margin-bottom: 25px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .detail-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .detail-content h2 {
+            font-size: 1.5em;
+            color: #333;
+            border-left: 5px solid #4174ff;
+            padding-left: 10px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .detail-content p {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+            font-size: 1em;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        .info-table th, .info-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            font-size: 0.95em;
+        }
+
+        .info-table th {
+            background-color: #f9f9f9;
+            width: 100px;
+            font-weight: bold;
+            color: #333;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+
+        <header>
+            <img src="banner.jpg" alt="블로그 메인 배너">
+            <h1>학교 앞 핫플레이스</h1>
+        </header>
+
+        <div id="container">
+
+            <aside>
+                <div class="profile-box">
+                    <div class="profile-img">
+                        <img src="profile.jpg" alt="프로필사진">
+                    </div>
+                    <div class="profile-name">하냥이</div>
+                    <div class="profile-desc">
+                        하냥이의 핫플 추천~!<br>
+                        하냥인들이라면 무조건 가야지<br>
+                        레츠기릿~
+                    </div>
+                </div>
+
+                <a href="index.html" class="back-btn">🏠 홈으로 가기</a>
+
+                <div class="category-box">
+                    <h3>Category</h3>
+                    <ul class="category-list">
+                        <li><a href="#">맛집 (Food)</a></li>
+                        <li><a href="#">술집 (Pub)</a></li>
+                        <li><a href="index_cafe.html">카페 (Cafe)</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <main>
+                <h1 class="detail-post-title">한양대 앞, 분위기 갑! [맛집2] 상세 리뷰</h1>
+                <div class="detail-post-meta">
+                    카테고리: 맛집 | 작성자: 하냥이 | 2025.12.03
+                </div>
+
+                <div class="detail-thumbnail">
+                    <img src="food2_detail.jpg" alt="맛집2 상세 이미지"> 
+                </div>
+
+                <table class="info-table">
+                    <tr>
+                        <th>주소</th>
+                        <td>경기도 안산시 상록구 학사2길 6 1층</td>
+                    </tr>
+                    <tr>
+                        <th>영업시간</th>
+                        <td>평일 10:30 - 21:00 (20:30 라스트오더)</td>
+                    </tr>
+                    <tr>
+                        <th>추천 메뉴</th>
+                        <td>미트러버파스타,골든에그피자</td>
+                    </tr>
+                    <tr>
+                        <th>주차</th>
+                        <td>인근 공영 주차장 이용 가능</td>
+                    </tr>
+                </table>
+
+
+                <div class="detail-content">
+                    <h2>✨ 첫인상 및 분위기</h2>
+                    <p>
+                        파앤피파스타하우스 한양대에리카점은 한양대 에리카 근처의 가성비 좋은 파스타 맛집입니다.
+                        테이블 간격이 넓어 쾌적하며 아기의자, 내부 화장실 등 편의시설도 잘 갖춰져 있어 가족 단위 방문에도 적합합니다.
+                    </p>
+
+                    <h2>☕ 메뉴 리뷰</h2>
+                    <p>
+                        양식종류가 다양해서 취향껏 먹을 수 있어서 좋았습니다.
+                        양도 푸짐하고 분위기가 좋아 또 방문하고 싶습니다.
+                    </p>
+
+                    <h2>💡 하냥이 총평</h2>
+                    <p>
+                        저녁시간이되면 대기가 있어 피해서 가시는 것을 추천드립니다. 
+                        메뉴가 다양해 단체, 가족, 연인 등 함께 가셔도 좋을것 같습니다.
+                    </p>
+                </div>
+            </main>
+
+        </div>
+    </div>
+</body>
+</html>
