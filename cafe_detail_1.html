@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>카페1 상세 리뷰 - 학교 앞 핫플레이스</title>
+    <style>
+        /* CSS 영역: 이전 index_cafe.html의 CSS를 그대로 복사하여 붙여넣습니다. */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Malgun Gothic', 'Dotum', sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        #wrap {
+            width: 1080px;  
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        header {
+            width: 100%;
+            height: 325px;
+            background-color: #ddd;
+            overflow: hidden;
+            position: relative;
+        }
+
+        header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        header h1 {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-size: 2em;
+        }
+
+        #container {
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        aside {
+            width: 240px;
+            float: left;
+            margin-right: 20px;
+        }
+
+        .profile-box {
+            border: 1px solid #e5e5e5;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            background: #fff;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin: 0 auto 10px;
+            overflow: hidden;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .profile-desc {
+            font-size: 0.9em;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .back-btn {
+            display: block;
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #333;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+
+        .category-box {
+            border: 1px solid #e5e5e5;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .category-box h3 {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-bottom: 1px solid #e5e5e5;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .category-list {
+            list-style: none;
+        }
+
+        .category-list li {
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .category-list li:last-child {
+            border-bottom: none;
+        }
+
+        .category-list a {
+            display: block;
+            padding: 12px 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        .category-list a:hover {
+            background-color: #f0f2f5;
+            color: #4174ff;
+            font-weight: bold;
+        }
+        
+        /* 새로운 스타일 추가: 상세 페이지용 */
+        main {
+            width: 760px;
+            float: left;
+        }
+
+        .detail-post-title {
+            font-size: 2em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .detail-post-meta {
+            color: #999;
+            font-size: 0.9em;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .detail-thumbnail {
+            width: 100%;
+            height: 450px; /* 큰 이미지 영역 */
+            margin-bottom: 25px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .detail-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .detail-content h2 {
+            font-size: 1.5em;
+            color: #333;
+            border-left: 5px solid #4174ff;
+            padding-left: 10px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .detail-content p {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+            font-size: 1em;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        .info-table th, .info-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            font-size: 0.95em;
+        }
+
+        .info-table th {
+            background-color: #f9f9f9;
+            width: 100px;
+            font-weight: bold;
+            color: #333;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+
+        <header>
+            <img src="banner.jpg" alt="블로그 메인 배너">
+            <h1>학교 앞 핫플레이스</h1>
+        </header>
+
+        <div id="container">
+
+            <aside>
+                <div class="profile-box">
+                    <div class="profile-img">
+                        <img src="profile.jpg" alt="프로필사진">
+                    </div>
+                    <div class="profile-name">하냥이</div>
+                    <div class="profile-desc">
+                        하냥이의 핫플 추천~!<br>
+                        하냥인들이라면 무조건 가야지<br>
+                        레츠기릿~
+                    </div>
+                </div>
+
+                <a href="index.html" class="back-btn">🏠 홈으로 가기</a>
+
+                <div class="category-box">
+                    <h3>Category</h3>
+                    <ul class="category-list">
+                        <li><a href="#">맛집 (Food)</a></li>
+                        <li><a href="#">술집 (Pub)</a></li>
+                        <li><a href="index_cafe.html">카페 (Cafe)</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <main>
+                <h1 class="detail-post-title">한양대 앞, 분위기 갑! [카페1] 상세 리뷰</h1>
+                <div class="detail-post-meta">
+                    카테고리: 카페 | 작성자: 하냥이 | 2025.12.03
+                </div>
+
+                <div class="detail-thumbnail">
+                    <img src="cafe1_detail.jpg" alt="카페1 상세 이미지"> 
+                </div>
+
+                <table class="info-table">
+                    <tr>
+                        <th>주소</th>
+                        <td>경기도 안산시 상록구 한양대학로 123-4</td>
+                    </tr>
+                    <tr>
+                        <th>영업시간</th>
+                        <td>평일 10:00 - 22:00 (주말 11:00 - 21:00)</td>
+                    </tr>
+                    <tr>
+                        <th>추천 메뉴</th>
+                        <td>시그니처 라떼, 수제 당근 케이크</td>
+                    </tr>
+                    <tr>
+                        <th>주차</th>
+                        <td>인근 공영 주차장 이용 가능</td>
+                    </tr>
+                </table>
+
+
+                <div class="detail-content">
+                    <h2>✨ 첫인상 및 분위기</h2>
+                    <p>
+                        학교 정문에서 도보 5분 거리에 위치한 이 카페는 깔끔하고 모던한 인테리어가 돋보입니다. 
+                        특히 넓은 창문으로 들어오는 자연광 덕분에 사진이 예쁘게 나와 SNS에서도 인기가 많습니다. 
+                        잔잔한 재즈 음악이 흘러나와 노트북으로 작업하거나 팀 과제를 하기에도 최적의 장소입니다.
+                    </p>
+
+                    <h2>☕ 메뉴 리뷰</h2>
+                    <p>
+                        저희가 강력 추천하는 메뉴는 **시그니처 라떼**입니다. 부드러운 우유 거품과 고소한 에스프레소의 조화가 환상적이며, 
+                        다른 곳에서는 맛볼 수 없는 깊은 풍미를 느낄 수 있습니다. 
+                        디저트로는 **수제 당근 케이크**가 유명한데, 촉촉한 시트와 과하게 달지 않은 크림치즈가 커피와 완벽한 궁합을 자랑합니다.
+                    </p>
+
+                    <h2>💡 하냥이 총평</h2>
+                    <p>
+                        접근성, 맛, 분위기 삼박자를 모두 갖춘 찐 핫플레이스입니다. 시험 기간에는 자리가 금방 차니 조금 일찍 방문하시는 것을 추천해요! 
+                        특히 조용히 책 읽거나 집중해서 공부하기 좋은 스터디 공간도 마련되어 있어 학생들에게 강력하게 추천합니다! 💯
+                    </p>
+                </div>
+            </main>
+
+        </div>
+    </div>
+</body>
+</html>
