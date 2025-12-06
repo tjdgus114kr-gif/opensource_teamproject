@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>학교 앞 술집3 리뷰</title>
+    <title>학교 앞 핫플레이스 리뷰</title>
     <style>
         *{
             margin: 0;
@@ -166,10 +166,62 @@
             background: #fff;
             border: 1px solid #e5e5e5;
             border-radius: 10px;
-            text-align: center;
             font-size: 1em;
             color: #333;
             line-height: 1.6;
+        }
+
+        .section-title {
+            margin-top: 40px;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        .photo-grid,
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        .photo-card,
+        .menu-card {
+            border: 1px solid #e5e5e5;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .photo-card img,
+        .menu-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-caption,
+        .menu-desc {
+            padding: 10px 12px;
+            font-size: 0.9em;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .menu-name {
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            text-align: center;
+        }
+
+        .menu-price {
+            margin-top: 4px;
+            font-size: 0.95em;
+            color: #ff4b4b;
+            text-align: center;
         }
     </style>
 </head>
@@ -210,11 +262,67 @@
             </aside>
 
             <main>
-                <div class="main-section-title">술집3</div>
+                <div class="main-section-title">만취</div>
 
                 <div class="content-area">
-                    여기에 술집3 리뷰 내용을 작성하세요!<br>
-                    (이미지 · 텍스트 · 후기 등 자유롭게)
+
+                
+                    <iframe 
+                        src="https://map.naver.com/p/entry/place/1859648742?c=15.07,0,0,0,dh"
+                       width="100%"  
+                        height="450" 
+                        style="border:0;"
+                        allowfullscreen
+                        loading="lazy">
+                    </iframe>
+
+                    <div style="margin-top: 20px; font-size: 1rem; line-height: 1.6; color: #333;">
+                        <p><strong>위치:</strong> 경기 안산시 상록구 한양대학로 36 2층</p>
+                        <p><strong>영업시간:</strong> 매일 17:00~04:00</p>
+                        <p><strong>전화번호:</strong> 0507-1437-5289</p>
+                    </div>
+
+                 
+                    <div class="section-title">가게 분위기</div>
+                    <div class="photo-grid">
+                        <div class="photo-card">
+                            <img src="pub3_outside.jpg" alt="만취 외관">
+                            <div class="photo-caption">
+                                넓은 전면 유리창과 밝은 간판이 눈에 띄는 곳으로, 전체적으로 밝은 느낌이라 첫 방문에도 부담 없이 들어가기 좋다.
+                            </div>
+                        </div>
+                        <div class="photo-card">
+                            <img src="pub3_inside.jpg" alt="만취 내부">
+                            <div class="photo-caption">
+                                큰 스크린과 널찍한 테이블 배치로 편하게 머물 수 있는 구조.
+                                깔끔한 우드톤 인테리어가 포인트이며, 캐주얼한 술자리에 잘 어울린다.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-title">대표 메뉴</div>
+                    <div class="menu-grid">
+                        <div class="menu-card">
+                            <img src="pub2_mara.jpg" alt="통닭 크림파스타">
+                            <div class="menu-name">통닭 크림파스타</div>
+                            <div class="menu-price">22,900원</div>
+                            <div class="menu-desc">
+                               크림 소스 위에 통닭 한 조각을 올린 듯한 비주얼의 독특한 메뉴.
+                               부드러운 크림과 고기의 조합이 좋고, 양도 넉넉한 편이다.
+                            </div>
+                        </div>
+
+                        <div class="menu-card">
+                            <img src="pub2_chicken.jpg" alt="치즈 감자전">
+                            <div class="menu-name">치즈 감자전</div>
+                            <div class="menu-price">13,900원</div>
+                            <div class="menu-desc">
+                                감자전 위에 치즈를 듬뿍 올린 메뉴.
+                                바삭한 식감과 진한 치즈 풍미가 조화를 이루며 가벼운 안주로 딱 좋다.
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
             </main>
