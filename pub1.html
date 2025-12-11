@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>학교 앞 맛집 추천</title>
+    <title>학교 앞 핫플레이스 리뷰</title>
     <style>
         *{
             margin: 0;
@@ -151,46 +151,77 @@
         }
 
         .main-section-title {
-            font-size: 1.2em;
+            font-size: 1.4em;
             font-weight: bold;
             color: #000;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             border-bottom: 2px solid #333;
             padding-bottom: 10px;
         }
 
-        .store-grid {
+        .content-area {
+            width: 100%;
+            min-height: 400px;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 10px;
+            font-size: 1em;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .section-title {
+            margin-top: 40px;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        .photo-grid,
+        .menu-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 25px;
+            gap: 16px;
+            margin-bottom: 30px;
         }
 
-        .store-wrapper {
-            background: white;
+        .photo-card,
+        .menu-card {
+            border: 1px solid #e5e5e5;
             border-radius: 10px;
             overflow: hidden;
-            border: 1px solid #e5e5e5;
+            background: #fff;
         }
 
-        .store-image {
+        .photo-card img,
+        .menu-card img {
             width: 100%;
-            height: 230px;
-            background: #f4f4f4;
-            overflow: hidden;
-        }
-
-        .store-image img {
-            width: 100%;
-            height: 100%;
+            height: 220px;
             object-fit: cover;
+            display: block;
         }
 
-        .store-name-out {
-            text-align: center;
-            padding: 12px;
-            font-size: 1em;
+        .photo-caption,
+        .menu-desc {
+            padding: 10px 12px;
+            font-size: 0.9em;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .menu-name {
+            margin-top: 10px;
             font-weight: bold;
-            color: #333;
+            font-size: 1em;
+            text-align: center;
+        }
+
+        .menu-price {
+            margin-top: 4px;
+            font-size: 0.95em;
+            color: #ff4b4b;
+            text-align: center;
         }
     </style>
 </head>
@@ -231,36 +262,64 @@
             </aside>
 
             <main>
-                <div class="main-section-title">맛집</div>
+                <div class="main-section-title">로드락비어</div>
 
-                <div class="store-grid">
+                <div class="content-area">
 
-                    <div class="store-wrapper">
-                        <div class="image1 store-image">
-                            <a href="list1.html"><img src="image1.jpg" alt="동양솥밥"></a>
-                        </div>
-                        <div class="동양솥밥">맛집1</div>
+                
+                    <iframe 
+                        src="https://map.naver.com/v5/search/%EB%A1%9C%EB%93%9C%EB%9D%BD%EB%B9%84%EC%96%B4%20%EC%95%88%EC%82%B0%ED%95%AD%EC%96%91%EB%8C%80%EC%A0%90/place/1333435199?c=14140893.0379511,4492166.1277793,15,0,0,0,dh"
+                        width="100%" 
+                        height="450" 
+                        style="border:0;"
+                        allowfullscreen
+                        loading="lazy">
+                    </iframe>
+
+                    <div style="margin-top: 20px; font-size: 1rem; line-height: 1.6; color: #333;">
+                        <p><strong>위치:</strong> 경기 안산시 상록구 성안길 78-3</p>
+                        <p><strong>영업시간:</strong> 월-토 17:00~02:00, 일요일 정기휴무</p>
+                        <p><strong>전화번호:</strong> 0507-1365-3552</p>
                     </div>
 
-                    <div class="store-wrapper">
-                        <div class="image2 store-image">
-                            <a href="list2.html"><img src="image2.jpg" alt="파앤피파스타하우스"></a>
+                 
+                    <div class="section-title">가게 분위기</div>
+                    <div class="photo-grid">
+                        <div class="photo-card">
+                            <img src="pub1_outside.png" alt="로드락비어 외관">
+                            <div class="photo-caption">
+                                한양대 에리카 정문 근처에 있는 로드락비어 외관. 빨간 네온 간판이 멀리서도 딱 보이는 술집이다.
+                            </div>
                         </div>
-                        <div class="파앤피파스타하우스">맛집2</div>
+                        <div class="photo-card">
+                            <img src="pub1_inside.png" alt="로드락비어 내부">
+                            <div class="photo-caption">
+                                어두운 톤 인테리어와 네온사인 덕분에 사진 찍기 좋은 분위기. 테이블 간 간격이 넓어서 단체 모임하기도 편하다.
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="store-wrapper">
-                        <div class="image3 store-image">
-                            <a href="list3.html"><img src="image3.jpg" alt="코운즈"></a>
+                    <div class="section-title">대표 메뉴</div>
+                    <div class="menu-grid">
+                        <div class="menu-card">
+                            <img src="pub1_pork.png" alt="오리지널">
+                            <div class="menu-name">오리지널</div>
+                            <div class="menu-price">20,900원</div>
+                            <div class="menu-desc">
+                                바삭하게 튀긴 한입 크기 돼지고기와 바삭한 과자 토핑이 올라간 시그니처 안주.
+                                둘이 먹어도 든든할 정도로 양이 넉넉하다.
+                            </div>
                         </div>
-                        <div class="코운즈">맛집3</div>
-                    </div>
 
-                    <div class="store-wrapper">
-                        <div class="image4 store-image">
-                            <a href="list4.html"><img src="image4.jpg" alt="통영집"></a>
+                        <div class="menu-card">
+                            <img src="pub1_beer.png" alt="번개꽃맥주">
+                            <div class="menu-name">번개꽃맥주</div>
+                            <div class="menu-price">5,000원</div>
+                            <div class="menu-desc">
+                                맥주 위에 분홍색 솜사탕 같은 토핑이 폭신하게 올라간 메뉴.
+                                달달한 향과 비주얼 때문에 사진 찍고 올리기 딱 좋은 시그니처 맥주다.
+                            </div>
                         </div>
-                        <div class="통영집">맛집4</div>
                     </div>
 
                 </div>
